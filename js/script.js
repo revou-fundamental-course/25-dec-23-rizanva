@@ -35,6 +35,8 @@ function changeShape() {
 function calculate() {
   var shape = document.getElementById("shape").value
   var resultDiv = document.getElementById("result")
+  var manualCalculationDiv = document.getElementById("manualCalculation")
+  var manualFormula = document.getElementById("manualFormula")
 
   var base, height
   if (shape === "segitiga") {
@@ -44,8 +46,28 @@ function calculate() {
     var luas = 0.5 * base * height
     var keliling = base + 2 * Math.sqrt((base / 2) ** 2 + height ** 2)
 
+    // Perhitungan manual
+    var manualText =
+      "L = 1/2 x a x t <br>L = 1/2 x " +
+      base +
+      " x " +
+      height +
+      "<br>L = " +
+      luas.toFixed(0)
+    manualText +=
+      "<br><br>Keliling = a + √(a/2)^2 + t^2 <br>Keliling = " +
+      base +
+      " + √(" +
+      base / 2 +
+      ")^2 + " +
+      height +
+      "^2 <br>Keliling = " +
+      keliling.toFixed(0)
+
+    // Tampilkan hasil dan perhitungan manual
     resultDiv.innerHTML =
-      "Luas: " + luas.toFixed(2) + "<br>Keliling: " + keliling.toFixed(2)
+      "Luas: " + luas.toFixed(0) + "<br>Keliling: " + keliling.toFixed(0)
+    manualFormula.innerHTML = manualText
   } else if (shape === "jajargenjang") {
     base = parseFloat(document.getElementById("baseJG").value)
     height = parseFloat(document.getElementById("heightJG").value)
@@ -53,20 +75,42 @@ function calculate() {
     var luas = base * height
     var keliling = 2 * (base + height)
 
+    // Perhitungan manual
+    var manualText =
+      "L = a x t <br>L = " +
+      base +
+      " x " +
+      height +
+      "<br>L = " +
+      luas.toFixed(0)
+    manualText +=
+      "<br><br>Keliling = 2 x (a + t) <br>Keliling = 2 x (" +
+      base +
+      " + " +
+      height +
+      ") <br>Keliling = " +
+      keliling.toFixed(0)
+
+    // Tampilkan hasil dan perhitungan manual
     resultDiv.innerHTML =
-      "Luas: " + luas.toFixed(2) + "<br>Keliling: " + keliling.toFixed(2)
+      "Luas: " + luas.toFixed(0) + "<br>Keliling: " + keliling.toFixed(0)
+    manualFormula.innerHTML = manualText
   }
 
-  function resetForm() {
-    // Reset inputan dan hasil
-    document.getElementById("base").value = ""
-    document.getElementById("height").value = ""
-    document.getElementById("baseJG").value = ""
-    document.getElementById("heightJG").value = ""
-    document.getElementById("result").innerHTML = ""
+  // Tampilkan perhitungan manual di atas tombol hitung
+  manualCalculationDiv.style.display = "block"
+  manualCalculationDiv.scrollIntoView() // Scroll ke perhitungan manual untuk memastikan terlihat
+}
 
-    // Kembalikan gambar dan rumus ke awal
-    document.getElementById("shape").value = "segitiga"
-    changeShape()
-  }
+function resetForm() {
+  // Reset input values
+  document.getElementById("base").value = ""
+  document.getElementById("height").value = ""
+  document.getElementById("baseJG").value = ""
+  document.getElementById("heightJG").value = ""
+
+  // Clear result and manual calculation
+  document.getElementById("result").innerHTML = ""
+  document.getElementById("manualCalculation").style.display = "none"
+  document.getElementById("manualFormula").innerHTML = ""
 }

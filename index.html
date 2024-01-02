@@ -20,6 +20,12 @@
         <option value="jajargenjang">Jajar Genjang</option>
       </select>
 
+      <!-- <label for="shape">Pilih Hitung:</label>
+      <select id="shape" onchange="changeShape()">
+        <option value="segitiga">Luas</option>
+        <option value="jajargenjang">Keliling</option>
+      </select> -->
+
       <div class="center-container">
         <img
           id="shapeImage"
@@ -51,6 +57,11 @@
         <input type="number" id="baseJG" placeholder="Panjang Alas" />
         <label for="heightJG">Tinggi:</label>
         <input type="number" id="heightJG" placeholder="Tinggi" />
+      </div>
+
+      <div id="manualCalculation" style="display: none; margin-bottom: 10px">
+        <h3>Penghitungan Manual:</h3>
+        <p id="manualFormula"></p>
       </div>
 
       <!-- Tombol hitung -->
