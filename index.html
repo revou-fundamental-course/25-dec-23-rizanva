@@ -3,7 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Kalkulator Segitiga dan Jajar Genjang</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Welcome to Katik</h1>
+      <p>Hai Sobat, Selamat datang di Katik :)</p>
+      <p>
+        Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan
+        keliling bangun datar
+      </p>
+      <label for="shape">Pilih Bentuk:</label>
+      <select id="shape" onchange="changeShape()">
+        <option value="segitiga">Segitiga</option>
+        <option value="jajargenjang">Jajar Genjang</option>
+      </select>
+
+      <div class="center-container">
+        <img
+          id="shapeImage"
+          src="segitiga.png"
+          alt="Shape Image"
+          width="100"
+          height="100"
+        />
+      </div>
+
+      <div id="rumusContainer">
+        <span id="rumusLabel">Rumus Luas:</span>
+        <span id="rumusFormula" class="formula"
+          ><strong>L = ½ x a x t</strong></span
+        >
+        <br /><span>Di mana:</span><br />L = Luas<br />a = Panjang alas<br />t =
+        Tinggi
+      </div>
+
+      <div id="segitigaInputs">
+        <label for="base">Panjang Alas:</label>
+        <input type="number" id="base" placeholder="Panjang Alas" />
+        <label for="height">Tinggi:</label>
+        <input type="number" id="height" placeholder="Tinggi" />
+      </div>
+
+      <div id="jajargenjangInputs" style="display: none">
+        <label for="baseJG">Panjang Alas:</label>
+        <input type="number" id="baseJG" placeholder="Panjang Alas" />
+        <label for="heightJG">Tinggi:</label>
+        <input type="number" id="heightJG" placeholder="Tinggi" />
+      </div>
+
+      <!-- Tombol hitung -->
+      <button class="calculate" onclick="calculate()">Hitung</button>
+
+      <!-- Wadah untuk tombol reset -->
+      <div class="reset-container">
+        <!-- Tombol reset -->
+        <button class="reset" onclick="resetForm()">Reset</button>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>

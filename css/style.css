@@ -1,2 +1,84 @@
-/* Untuk test git */
-/* Ada perubahan */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.center-container {
+  text-align: center;
+}
+
+#shapeImage {
+  margin: 10px auto;
+  display: block;
+}
+
+h1,
+p {
+  text-align: center;
+  color: #333;
+}
+
+.formula {
+  text-align: center;
+  font-weight: bold;
+  display: block;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button.calculate {
+  background-color: #3498db; /* Warna biru */
+  color: #fff;
+  margin-right: 10px; /* Jarak kanan antara tombol hitung dan tombol reset */
+  display: block; /* Membuat tombol hitung sebagai elemen blok */
+  margin: 0 auto; /* Memberikan margin otomatis di sisi kiri dan kanan untuk menengahkan tombol hitung */
+}
+
+button.calculate:hover {
+  background-color: #2980b9; /* Warna biru yang sedikit lebih gelap saat dihover */
+}
+
+/* Gaya tambahan untuk tombol reset */
+button.reset {
+  background-color: #ff8c00; /* Warna orange */
+  color: #fff;
+}
+
+button.reset:hover {
+  background-color: #ff6f00; /* Warna orange yang sedikit lebih gelap saat dihover */
+}
+
+/* Gaya untuk mengelola tata letak tombol reset */
+.reset-container {
+  text-align: right;
+  margin-top: 10px; /* Jarak atas antara tombol hitung dan tombol reset */
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
